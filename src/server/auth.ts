@@ -47,10 +47,12 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(prisma),
   providers: [
-    // DiscordProvider({
-    //   clientId: env.DISCORD_CLIENT_ID,
-    //   clientSecret: env.DISCORD_CLIENT_SECRET,
-    // }),
+    DiscordProvider({
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      clientId: env.DISCORD_CLIENT_ID,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      clientSecret: env.DISCORD_CLIENT_SECRET,
+    }),
     /**
      * ...add more providers here.
      *
